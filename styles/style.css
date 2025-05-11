@@ -3,7 +3,8 @@
 *::after {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  -moz-box-sizing: border-box; 
+  text-underline-offset: 6px;
 }
 
 html {
@@ -50,6 +51,8 @@ ol {
   gap:30px;
   padding: 133px 30px;
   flex-shrink: 0; 
+  min-inline-size: 1200px; 
+  min-block-size: 500px; 
 }
 
 .search-form{
@@ -60,19 +63,8 @@ ol {
 }
 
 .search-form__submit-button {
-  color: #FFF;
-  text-align: center;
-  font-family: inherit;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  min-block-size: 34px;
-  background-color: transparent;
-  border: 1px solid #FFF; 
-  width: 194px;
+  width: 194px; 
   align-self: flex-end; 
-  min-inline-size: 194px; 
 }
 
 .content__list{
@@ -84,7 +76,6 @@ ol {
 .content__details{
   height: 100%;
   min-width: 340px;
-
 }
 
 .result{
@@ -118,7 +109,6 @@ ol {
   padding-bottom: 30px;
 }
 
-
 .content__list-item:last-child{
   padding-bottom: 0;
 }
@@ -139,6 +129,7 @@ ol {
 .content__video-card-description-container{
   width: 100%;
   min-block-size: 103px; 
+  max-inline-size: 300px; 
 }
 
 .content__list{
@@ -155,7 +146,7 @@ ol {
   padding-bottom: 5px; 
 }
 
-.title{
+.title {
   color: #FFF;
   font-family: Oswald, sans-serif;
   font-size: 75px;
@@ -171,29 +162,34 @@ ol {
   text-align: center;
 }
 
-.content__card-link{
+.content__card-link {
   text-decoration: none;
   color: #FFF;
   font-family: inherit;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  margin: 3px; 
+  margin: 3px;
+  display: block;
 }
 
-.content__card-link_current{
+.content__card-link:hover,
+.content__card-link:active {
+  text-decoration: underline; 
+  color: rgba(255, 255, 255, 0.8); 
+  background: #545050; 
+}
+
+.content__card-link_current {
   background: #545050;
 }
 
-.content__card-link_current:focus{
-  outline: none;
-}
-
-.content__card-link_current:focus-visible{
+.content__card-link_current:focus-visible {
   outline: 1px solid #fff;
+  outline-offset: 2px;
 }
 
-.content__video-card-title{
+.content__video-card-title {
   color: #FFF;
   font-family: Oswald, sans-serif;
   font-size: 30px;
@@ -204,7 +200,8 @@ ol {
   padding-bottom: 6px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden; 
+  overflow: hidden;
+  max-inline-size: 195px; 
 }
 
 .content__video-card-description{
@@ -242,6 +239,11 @@ fieldset{
 
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline; 
+}
+
+.search-form__label:focus-visible {
+  outline: 1px solid #fff; 
+  outline-offset: 1px;
 }
 
 .search-form__pseudo-checkbox {
@@ -299,12 +301,9 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox {
   outline: none;
 }
 
-.search-form__textfield:focus-visible{
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
-.search-form__checkbox:focus-visible{
+.search-form__textfield:focus-visible,
+.button:focus-visible
+{
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -320,56 +319,17 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox {
   min-block-size: 34px;
   background-color: transparent;
   border: 1px solid #FFF; 
+  cursor: pointer;
+  text-decoration: none; 
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.1); 
-  cursor: pointer; 
+  text-decoration: underline; 
+  background-color: transparent;
 }
 
 .more-button {
-  color: #FFF;
-  text-align: center;
-  font-family: inherit;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  min-block-size: 34px;
-  background-color: transparent;
-  border: 1px solid #FFF; 
-  width: 100%;
-}
-
-button:focus{
-  outline: none;
-}
-.search-form__submit-button:focus-visible{
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
-.search-form__label-text:hover{
-  text-decoration: underline;
-}
-
-.search-form__submit-button:hover{
-  text-decoration: underline;
-}
-.search-form__submit-button:active{
-  background: #545050;
-}
-
-.content__list-item:hover {
-  text-decoration: none;
-}
-
-.search-form__label:active{
-  outline: 1px solid #fff;
-}
-
-.content__card-link{
-  display: block;
+  width: 100%; 
 }
 
 a:focus {
